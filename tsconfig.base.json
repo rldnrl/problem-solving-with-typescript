@@ -14,7 +14,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@typescript-coding-interview/leetcode": ["packages/leetcode/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
