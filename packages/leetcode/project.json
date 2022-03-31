@@ -1,0 +1,33 @@
+{
+  "root": "packages/leetcode",
+  "sourceRoot": "packages/leetcode/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/leetcode",
+        "main": "packages/leetcode/src/index.ts",
+        "tsConfig": "packages/leetcode/tsconfig.lib.json",
+        "assets": ["packages/leetcode/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/leetcode/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/leetcode"],
+      "options": {
+        "jestConfig": "packages/leetcode/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
