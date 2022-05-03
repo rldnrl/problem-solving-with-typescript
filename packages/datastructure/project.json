@@ -1,0 +1,32 @@
+{
+  "root": "packages/datastructure",
+  "sourceRoot": "packages/datastructure/src",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:swc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/datastructure",
+        "main": "packages/datastructure/src/index.ts",
+        "tsConfig": "packages/datastructure/tsconfig.lib.json",
+        "assets": ["packages/datastructure/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/datastructure/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/datastructure"],
+      "options": {
+        "jestConfig": "packages/datastructure/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
