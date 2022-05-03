@@ -15,7 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@typescript-coding-interview/leetcode": ["packages/leetcode/src/index.ts"]
+      "@typescript-coding-interview/datastructure": ["packages/datastructure/src/index.ts"],
+      "@typescript-coding-interview/leetcode": [
+        "packages/leetcode/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
