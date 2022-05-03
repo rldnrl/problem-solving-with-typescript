@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
+    "datastructure": "packages/datastructure",
     "leetcode": "packages/leetcode"
   }
 }
