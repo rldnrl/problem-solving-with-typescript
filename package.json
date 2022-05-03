@@ -3,19 +3,24 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "leetcode:test": "nx run leetcode:test"
+    "leetcode:test": "nx run leetcode:test",
+    "datastructure:test": "nx run datastructure:test"
   },
   "private": true,
   "dependencies": {
     "tslib": "^2.0.0"
   },
   "devDependencies": {
-    "@nrwl/cli": "13.9.5",
-    "@nrwl/eslint-plugin-nx": "13.9.5",
-    "@nrwl/jest": "13.9.5",
-    "@nrwl/js": "13.9.5",
+    "@nrwl/cli": "14.0.5",
+    "@nrwl/eslint-plugin-nx": "14.0.5",
+    "@nrwl/jest": "14.0.5",
+    "@nrwl/js": "14.0.5",
     "@nrwl/linter": "13.9.5",
     "@nrwl/workspace": "13.9.5",
+    "@swc/cli": "~0.1.55",
+    "@swc/core": "~1.2.143",
+    "@swc/helpers": "~0.3.3",
+    "@swc/jest": "0.2.15",
     "@types/jest": "27.0.2",
     "@types/node": "16.11.7",
     "@typescript-eslint/eslint-plugin": "~5.10.0",
