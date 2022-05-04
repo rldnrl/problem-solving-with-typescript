@@ -15,6 +15,7 @@ export interface IQueue<T> {
   enqueue(newItem: T): void;
   /**
    * 첫 번째로 들어온 Queue를 꺼내는 메서드
+   * @returns T
    */
   dequeue(): T;
   /**
@@ -24,7 +25,6 @@ export interface IQueue<T> {
   peek(): T;
   /**
    * Queue의 내용을 출력하는 메서드
-   * @returns T
    */
   queueContents(): void;
 }
