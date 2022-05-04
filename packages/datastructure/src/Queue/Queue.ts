@@ -10,16 +10,20 @@ export class Queue<T> implements IQueue<T> {
     this.length = 0;
     this.queue = new Array<T>(this.maxSize);
   }
+
   isEmpty(): boolean {
     return this.length === 0;
   }
+  
   isFull(): boolean {
     return this.length === this.maxSize;
   }
+  
   enqueue(newItem: T): void {
     if (this.isFull()) throw new Error('Queue Overflow.');
     this.queue[this.length++] = newItem;
   }
+  
   dequeue(): T {
     if (this.isEmpty()) throw new Error('Queue is empty');
     const returnValue = this.queue[0];
@@ -31,10 +35,12 @@ export class Queue<T> implements IQueue<T> {
     this.length--;
     return returnValue;
   }
+  
   peek(): T {
     if (this.isEmpty()) throw new Error('Queue is empty');
     return this.queue[0];
   }
+  
   queueContents(): void {
     console.log('Queue Contents');
     this.queue.forEach((element, index) => {
