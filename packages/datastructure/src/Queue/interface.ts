@@ -8,8 +8,9 @@ export interface IQueue<T> {
    */
   isFull(): boolean;
   /**
-   * 
-   * @param newItem Queue에 Item을 추가하는 메서드
+   *
+   * @param newItem
+   * Queue에 Item을 추가하는 메서드
    */
   enqueue(newItem: T): void;
   /**
@@ -18,10 +19,12 @@ export interface IQueue<T> {
   dequeue(): T;
   /**
    * Queue의 맨 앞의 원소를 반환하는 메서드
+   * @returns T
    */
   peek(): T;
   /**
    * Queue의 내용을 출력하는 메서드
+   * @returns T
    */
   queueContents(): void;
 }
