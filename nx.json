@@ -1,6 +1,6 @@
 {
   "extends": "@nrwl/workspace/presets/core.json",
-  "npmScope": "leet-typescript",
+  "npmScope": "typescript-coding-interview",
   "affected": {
     "defaultBase": "main"
   },
