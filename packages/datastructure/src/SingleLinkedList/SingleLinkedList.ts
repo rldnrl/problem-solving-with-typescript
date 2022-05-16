@@ -1,3 +1,4 @@
+import { isNull } from '@typescript-coding-interview/type-guard';
 import type { ISingleLinkedList } from './interface';
 
 export class LinkedListNode<T> {
@@ -20,8 +21,10 @@ export class SingleLinkedList<T> implements ISingleLinkedList<T> {
       this.head = newNode;
       this.tail = this.head;
     } else {
-      this.tail = newNode;
-      this.tail.next = newNode;
+      if (!isNull(this.tail)) {
+        this.tail.next = newNode;
+        this.tail = newNode;
+      }
     }
     this.length++;
   }
