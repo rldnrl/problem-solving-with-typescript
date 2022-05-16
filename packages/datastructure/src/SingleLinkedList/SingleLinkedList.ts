@@ -1,6 +1,6 @@
 import type { ISingleLinkedList } from './interface';
 
-class LinkedListNode<T> {
+export class LinkedListNode<T> {
   val: T;
   next: LinkedListNode<T> | null;
   constructor(val: T) {
@@ -24,5 +24,23 @@ export class SingleLinkedList<T> implements ISingleLinkedList<T> {
       this.tail.next = newNode;
     }
     this.length++;
+  }
+
+  pop(): LinkedListNode<T> | undefined {
+    if (!this.head) return undefined;
+    let current = this.head;
+    let newTail = current;
+    while (current.next) {
+      newTail = current;
+      current = current.next;
+    }
+    this.tail = newTail;
+    this.tail.next = null;
+    this.length--;
+    if (this.length === 0) {
+      this.head = null;
+      this.tail = null;
+    }
+    return current;
   }
 }
