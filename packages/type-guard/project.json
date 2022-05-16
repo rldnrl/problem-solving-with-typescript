@@ -1,0 +1,33 @@
+{
+  "root": "packages/type-guard",
+  "sourceRoot": "packages/type-guard/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/type-guard",
+        "main": "packages/type-guard/src/index.ts",
+        "tsConfig": "packages/type-guard/tsconfig.lib.json",
+        "assets": ["packages/type-guard/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/type-guard/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/type-guard"],
+      "options": {
+        "jestConfig": "packages/type-guard/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
