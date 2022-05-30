@@ -1,4 +1,3 @@
-/* eslint-disable no-prototype-builtins */
 export default function twoSum(nums: number[], target: number) {
   const result: number[] = []
   const map: { [key: number]: number } = {}
