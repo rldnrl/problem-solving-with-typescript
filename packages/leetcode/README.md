@@ -1,7 +1,5 @@
 # leetcode
 
-This library was generated with [Nx](https://nx.dev).
-
-## Running unit tests
-
-Run `nx test leetcode` to execute the unit tests via [Jest](https://jestjs.io).
+- [x] [Two Sum](https://leetcode.com/problems/two-sum/)
+- [x] [Validate Palindrome](https://leetcode.com/problems/valid-palindrome/)
+- [x] [Longest Palindromic-Substring](https://leetcode.com/problems/longest-palindromic-substring/)
