@@ -1,5 +1,5 @@
 # TypeScript로 문제 풀기
 
-## Leet Code
+## Data Structure
 
-- [x] [Two Sum](https://leetcode.com/problems/two-sum/)
+## Leet Code
