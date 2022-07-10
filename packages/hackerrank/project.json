@@ -1,0 +1,23 @@
+{
+  "root": "packages/hackerrank",
+  "sourceRoot": "packages/hackerrank/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/hackerrank/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/hackerrank"],
+      "options": {
+        "jestConfig": "packages/hackerrank/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

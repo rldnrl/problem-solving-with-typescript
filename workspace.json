@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "datastructure": "packages/datastructure",
+    "hackerrank": "packages/hackerrank",
     "leetcode": "packages/leetcode",
     "type-guard": "packages/type-guard"
   }

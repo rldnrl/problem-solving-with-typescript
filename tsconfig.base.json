@@ -15,12 +15,17 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@typescript-coding-interview/type-guard": ["packages/type-guard/src/index.ts"],
       "@typescript-coding-interview/datastructure": [
         "packages/datastructure/src/index.ts"
       ],
+      "@typescript-coding-interview/hackerrank": [
+        "packages/hackerrank/src/index.ts"
+      ],
       "@typescript-coding-interview/leetcode": [
         "packages/leetcode/src/index.ts"
+      ],
+      "@typescript-coding-interview/type-guard": [
+        "packages/type-guard/src/index.ts"
       ]
     }
   },
