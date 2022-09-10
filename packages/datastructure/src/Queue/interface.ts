@@ -28,3 +28,7 @@ export interface IQueue<T> {
    */
   queueContents(): void;
 }
+
+export type QueueItems = {
+  [key: string | number]: any
+}
