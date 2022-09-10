@@ -1,7 +1,7 @@
 import { Queue2 } from './Queue2';
 
 describe('Queue2', () => {
-  it('should create Queue Instance', () => {
+  it('should create Queue2 Instance', () => {
     const queue = new Queue2<number>();
 
     expect(queue).toBeInstanceOf(Queue2);
