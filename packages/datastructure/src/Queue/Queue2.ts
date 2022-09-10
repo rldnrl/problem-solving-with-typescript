@@ -1,4 +1,4 @@
-import { IQueue, QueueItems } from "./interface";
+import { QueueItems } from "./interface";
 
 export class Queue2<T> {
   items: QueueItems = {}
