@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@typescript-coding-interview/algorithm": [
+        "packages/algorithm/src/index.ts"
+      ],
       "@typescript-coding-interview/datastructure": [
         "packages/datastructure/src/index.ts"
       ],

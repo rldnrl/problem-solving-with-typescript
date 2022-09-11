@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
+    "algorithm": "packages/algorithm",
     "datastructure": "packages/datastructure",
     "hackerrank": "packages/hackerrank",
     "leetcode": "packages/leetcode",
