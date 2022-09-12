@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "leetcode:test": "nx run leetcode:test",
-    "datastructure:test": "nx run datastructure:test"
+    "datastructure:test": "nx run datastructure:test",
+    "algorithm:test": "nx run algorithm:test"
   },
   "private": true,
   "dependencies": {
