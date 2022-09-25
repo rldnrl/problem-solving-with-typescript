@@ -1,20 +1,20 @@
 const combination = (n: number, k: number) => {
   const res: number[][] = []
 
-  const backtrack = (start: number, comb: number[]) => {
+  const combi = (start: number, comb: number[]) => {
     if (comb.length === k) {
       res.push([...comb])
       return
     }
 
-    for (let i = start; i < n + 1; i++) {
+    for (let i = start + 1; i < n; i++) {
       comb.push(i)
-      backtrack(i + 1, comb)
+      combi(i, comb)
       comb.pop()
     }
-
   }
-  backtrack(1, [])
+
+  combi(-1, [])
   return res
 }
 
