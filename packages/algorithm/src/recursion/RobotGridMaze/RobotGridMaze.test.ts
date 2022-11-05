@@ -51,16 +51,3 @@ describe('computePath Test', function () {
     ]))
   });
 });
-
-// System.out.println("Computed path1 (plain recursion):");
-// path1.forEach(System.out::println);
-//
-// Set<Point> path2 = new LinkedHashSet<>();
-//
-// boolean[][] maze2  = new boolean[2][2];
-// maze2[0][1] = true;
-//
-// RobotGridMaze.computePath(1, 1, maze2, path2);
-//
-// System.out.println("Computed path2 (plain recursion):");
-// path2.forEach(System.out::println);
