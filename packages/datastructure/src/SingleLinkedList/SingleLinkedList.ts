@@ -17,7 +17,7 @@ export class SingleLinkedList<T> implements ISingleLinkedList<T> {
 
   push(val: T) {
     const newNode = new LinkedListNode(val);
-    if (!this.head) {
+    if (isNull(this.head)) {
       this.head = newNode;
       this.tail = this.head;
     } else {
