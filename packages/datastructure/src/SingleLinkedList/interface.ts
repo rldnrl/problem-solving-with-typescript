@@ -8,4 +8,5 @@ export interface ISingleLinkedList<T> {
   get(index: number): LinkedListNode<T> | null;
   set(index: number, val: T): boolean;
   insert(index: number, val: T): boolean;
+  remove(index: number): LinkedListNode<T> | undefined;
 }
