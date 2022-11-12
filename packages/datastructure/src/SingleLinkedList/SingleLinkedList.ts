@@ -1,5 +1,5 @@
-import { isNull } from '@typescript-coding-interview/type-guard';
-import type { ISingleLinkedList } from './interface';
+import {isNull} from '@typescript-coding-interview/type-guard';
+import type {ISingleLinkedList} from './interface';
 
 export class LinkedListNode<T> {
   val: T;
@@ -106,5 +106,31 @@ export class SingleLinkedList<T> implements ISingleLinkedList<T> {
       return true;
     }
     return false;
+  }
+
+  insert(index: number, val: T): boolean {
+    if (index < 0 || index > this.length) {
+      return false;
+    }
+
+    if (index === 0) {
+      this.unshift(val);
+      return true;
+    }
+
+    if (index === this.length) {
+      this.push(val);
+      return true;
+    }
+
+    const newNode = new LinkedListNode(val);
+    const prevNode = this.get(index);
+    const tempNode = prevNode!.next;
+    prevNode!.next = newNode;
+    newNode.next = tempNode;
+
+    this.length++;
+
+    return true;
   }
 }
