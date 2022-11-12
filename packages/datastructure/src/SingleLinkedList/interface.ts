@@ -5,4 +5,5 @@ export interface ISingleLinkedList<T> {
   pop(): LinkedListNode<T> | undefined;
   shift(): LinkedListNode<T> | undefined;
   unshift(val: T): this;
+  get(index: number): LinkedListNode<T> | null;
 }
