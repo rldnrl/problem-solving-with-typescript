@@ -67,4 +67,20 @@ export class SingleLinkedList<T> implements ISingleLinkedList<T> {
 
     return currentHead;
   }
+
+  unshift(val: T): this {
+    const newNode = new LinkedListNode(val);
+
+    if (isNull(this.head)) {
+      this.head = newNode;
+      this.tail = this.head;
+    } else {
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+
+    this.length++;
+
+    return this;
+  }
 }
