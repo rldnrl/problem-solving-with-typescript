@@ -17,6 +17,7 @@ export class SingleLinkedList<T> implements ISingleLinkedList<T> {
 
   push(val: T) {
     const newNode = new LinkedListNode(val);
+
     if (isNull(this.head)) {
       this.head = newNode;
       this.tail = this.head;
@@ -26,11 +27,13 @@ export class SingleLinkedList<T> implements ISingleLinkedList<T> {
         this.tail = newNode;
       }
     }
+
     this.length++;
   }
 
   pop(): LinkedListNode<T> | undefined {
     if (!this.head) return undefined;
+
     let current = this.head;
     let newTail = current;
     while (current.next) {
@@ -39,11 +42,24 @@ export class SingleLinkedList<T> implements ISingleLinkedList<T> {
     }
     this.tail = newTail;
     this.tail.next = null;
+
     this.length--;
+
     if (this.length === 0) {
       this.head = null;
       this.tail = null;
     }
+
     return current;
+  }
+
+  shift(): LinkedListNode<T> | undefined {
+    if (!this.head) return undefined;
+    const currentHead = this.head;
+
+    this.head = currentHead.next;
+
+    this.length--;
+    return currentHead;
   }
 }
