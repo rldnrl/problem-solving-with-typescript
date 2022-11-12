@@ -83,4 +83,19 @@ export class SingleLinkedList<T> implements ISingleLinkedList<T> {
 
     return this;
   }
+
+  get(index: number): LinkedListNode<T> | null {
+    if (index < 0 || index > this.length) {
+      return null;
+    }
+
+    let currentNode = this.head
+    let currentIndex = 0;
+    while (currentIndex !== index) {
+      currentIndex++;
+      currentNode = currentNode!.next
+    }
+
+    return currentNode
+  }
 }
