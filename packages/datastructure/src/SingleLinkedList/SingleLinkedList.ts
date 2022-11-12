@@ -85,7 +85,7 @@ export class SingleLinkedList<T> implements ISingleLinkedList<T> {
   }
 
   get(index: number): LinkedListNode<T> | null {
-    if (index < 0 || index > this.length) {
+    if (index < 0 || index >= this.length) {
       return null;
     }
 
@@ -132,5 +132,27 @@ export class SingleLinkedList<T> implements ISingleLinkedList<T> {
     this.length++;
 
     return true;
+  }
+
+  remove(index: number): LinkedListNode<T> | undefined {
+    if (index < 0 || index >= this.length) {
+      return undefined;
+    }
+
+    if (index === 0) {
+      return this.shift();
+    }
+
+    if (index === this.length - 1) {
+      return this.pop();
+    }
+
+    const prevNode = this.get(index - 1);
+    const targetNode = (prevNode as LinkedListNode<T>).next;
+    (prevNode as LinkedListNode<T>).next = (targetNode as LinkedListNode<T>).next
+
+    this.length--;
+
+    return targetNode as LinkedListNode<T>;
   }
 }
