@@ -98,4 +98,13 @@ export class SingleLinkedList<T> implements ISingleLinkedList<T> {
 
     return currentNode
   }
+
+  set(index: number, val: T): boolean {
+    const foundNode=  this.get(index);
+    if (foundNode) {
+      foundNode.val = val;
+      return true;
+    }
+    return false;
+  }
 }
