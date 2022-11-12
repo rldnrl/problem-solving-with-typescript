@@ -93,7 +93,7 @@ export class SingleLinkedList<T> implements ISingleLinkedList<T> {
     let currentIndex = 0;
     while (currentIndex !== index) {
       currentIndex++;
-      currentNode = currentNode!.next
+      currentNode = (currentNode as LinkedListNode<T>).next
     }
 
     return currentNode
@@ -154,5 +154,34 @@ export class SingleLinkedList<T> implements ISingleLinkedList<T> {
     this.length--;
 
     return targetNode as LinkedListNode<T>;
+  }
+
+  reverse() {
+    let node = this.head;
+    this.head = this.tail;
+    this.tail = node;
+
+    let next: LinkedListNode<T> | null;
+    let prev = null
+    for (let i = 0; i < this.length; i++) {
+      next = (node as LinkedListNode<T>).next;
+      (node as LinkedListNode<T>).next = prev
+      prev = node;
+      node = next;
+    }
+
+    return this
+  }
+
+  print() {
+    const arr = [];
+    let currentNode = this.head;
+
+    while (currentNode) {
+      arr.push(currentNode.val);
+      currentNode = (currentNode as LinkedListNode<T>).next
+    }
+
+    console.log(arr)
   }
 }
