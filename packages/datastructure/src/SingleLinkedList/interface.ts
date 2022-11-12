@@ -7,4 +7,5 @@ export interface ISingleLinkedList<T> {
   unshift(val: T): this;
   get(index: number): LinkedListNode<T> | null;
   set(index: number, val: T): boolean;
+  insert(index: number, val: T): boolean;
 }
