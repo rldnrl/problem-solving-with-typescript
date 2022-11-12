@@ -6,4 +6,5 @@ export interface ISingleLinkedList<T> {
   shift(): LinkedListNode<T> | undefined;
   unshift(val: T): this;
   get(index: number): LinkedListNode<T> | null;
+  set(index: number, val: T): boolean;
 }
