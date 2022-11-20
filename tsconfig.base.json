@@ -18,6 +18,9 @@
       "@typescript-coding-interview/algorithm": [
         "packages/algorithm/src/index.ts"
       ],
+      "@typescript-coding-interview/challenge": [
+        "packages/challenge/src/index.ts"
+      ],
       "@typescript-coding-interview/datastructure": [
         "packages/datastructure/src/index.ts"
       ],
