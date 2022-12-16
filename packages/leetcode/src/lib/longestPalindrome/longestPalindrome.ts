@@ -1,13 +1,13 @@
 export default function longestPalindrome(s: string) {
-  let startIndex = 0;
-  let maxLength = 1;
+  let answer = "";
+  let maxLength = 0;
 
   const expandAroundMiddle = (left: number, right: number) => {
     while (left >= 0 && right < s.length && s[left] === s[right]) {
       const currentPalindromeLength = right - left + 1;
       if (currentPalindromeLength > maxLength) {
         maxLength = currentPalindromeLength;
-        startIndex = left;
+        answer = s.substring(left, right + 1);
       }
       left--;
       right++;
@@ -15,9 +15,9 @@ export default function longestPalindrome(s: string) {
   };
 
   for (let i = 0; i < s.length; i++) {
-    expandAroundMiddle(i - 1, i + 1);
+    expandAroundMiddle(i, i);
     expandAroundMiddle(i, i + 1);
   }
 
-  return s.slice(startIndex, startIndex + maxLength);
+  return answer
 }
