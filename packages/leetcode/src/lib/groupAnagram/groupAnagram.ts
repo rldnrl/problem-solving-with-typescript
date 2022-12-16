@@ -1,5 +1,5 @@
 export function groupAnagramWithSorting(strs: string[]): string[][] {
-  const map = strs.reduce((prev, str) => {
+  const map: Map<string, string[]> = strs.reduce((prev, str) => {
     const sortedStr = str.split("").sort().join("")
     const values = prev.get(sortedStr) || []
     values.push(str)
