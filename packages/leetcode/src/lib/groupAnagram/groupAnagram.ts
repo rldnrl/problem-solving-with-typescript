@@ -1,13 +1,11 @@
 export function groupAnagramWithSorting(strs: string[]): string[][] {
-  const map: Map<string, string[]> = strs.reduce((prev, str) => {
+  const map = strs.reduce((prev, str) => {
     const sortedStr = str.split("").sort().join("")
-    if (prev.get(sortedStr)) {
-      prev.get(sortedStr)!.push(str)
-    } else {
-      prev.set(sortedStr, [str])
-    }
+    const values = prev.get(sortedStr) || []
+    values.push(str)
+    prev.set(sortedStr, values)
     return prev
-  }, new Map<string, string[]>())
+  }, new Map())
 
   return [...map.values()]
 }
