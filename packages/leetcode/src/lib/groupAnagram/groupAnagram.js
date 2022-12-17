@@ -23,19 +23,19 @@ function groupAnagramWithSort(strs) {
  * @return {string[][]}
  */
 function groupAnagramWithFrequency(strs) {
-  const map = new Map()
-
-  strs.forEach((str) => {
+  const map = strs.reduce((previousValue, currentValue) => {
     const frequency = Array.from({ length: 26 }).fill(0)
-    for (const c of str) {
+    for (const c of currentValue) {
       frequency[c.charCodeAt(0) - 'a'.charCodeAt(0)]++
     }
 
     const key = frequency.map((count) => `#${count}`).join("")
-    const values = map.get(key) || []
-    values.push(str)
-    map.set(key, values)
-  })
+    const values = previousValue.get(key) || []
+    values.push(currentValue)
+    previousValue.set(key, values)
+
+    return previousValue
+  }, new Map())
 
   return [...map.values()]
 }
