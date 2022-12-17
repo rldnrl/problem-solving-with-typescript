@@ -14,6 +14,7 @@
   map.set([3, 1])
   
   const arrayByMap = [...map.entries()]
+  
   // 내림차순 정렬
   arrayByMap.sort((a, b) => b[1] - a[1])
   
