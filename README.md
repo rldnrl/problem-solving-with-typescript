@@ -5,6 +5,7 @@
 ## Hacker Rank
 
 ## 자료구조 Tip
+### `Map`
 - `Map`에서 `Value`를 기준으로 정렬하기
   - 배열로 변환한다.
   ```javascript
