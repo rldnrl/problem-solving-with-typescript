@@ -1,10 +1,9 @@
 {
   "root": "packages/leetcode",
   "sourceRoot": "packages/leetcode/src",
-  "projectType": "library",
   "targets": {
     "build": {
-      "executor": "@nrwl/js:tsc",
+      "executor": "@nrwl/js:swc",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/leetcode",
