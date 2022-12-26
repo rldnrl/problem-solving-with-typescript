@@ -25,5 +25,29 @@ function productExceptSelfWithLeftAndRight(nums) {
   return answer;
 }
 
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+function optimizeProductExceptSelfWithLeftAndRight(nums) {
+  const size = nums.length;
+  const answer = Array.from({ length: size });
+
+  answer[0] = 1;
+  for (let i = 1; i < size; i++) {
+    answer[i] = answer[i - 1] * nums[i - 1];
+  }
+
+  let right = 1;
+  for (let i = size - 1; i >= 0; i--) {
+    answer[i] = answer[i] * right;
+    right = right * nums[i];
+  }
+
+  return answer;
+}
+
 console.log(productExceptSelfWithLeftAndRight([1,2,3,4]))
 console.log(productExceptSelfWithLeftAndRight([-1,1,0,-3,3]))
+console.log(optimizeProductExceptSelfWithLeftAndRight([1,2,3,4]))
+console.log(optimizeProductExceptSelfWithLeftAndRight([-1,1,0,-3,3]))
