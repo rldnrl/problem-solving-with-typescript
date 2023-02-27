@@ -2,5 +2,5 @@
 
 ## Functional Programming
 
-*reference
-- [deno/std](https://deno.land/std@0.178.0/)
+**reference**
+  - [deno/std](https://deno.land/std@0.178.0/)
