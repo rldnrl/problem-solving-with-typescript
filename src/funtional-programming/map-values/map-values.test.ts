@@ -61,4 +61,34 @@ Deno.test("mappers", () => {
       CalendarFile: ".cal",
     }
   );
+
+  mapValuesTest(
+    [
+      {
+        mode: "god",
+        power: "sun",
+      },
+      (value) => value.toUpperCase(),
+    ],
+    {
+      mode: "GOD",
+      power: "SUN",
+    }
+  );
+
+  const prefixWith = (prefix: string) => (str: string) => `${prefix}${str}`;
+
+  mapValuesTest(
+    [
+      {
+        x: "hi",
+        y: "bye",
+      },
+      prefixWith("x"),
+    ],
+    {
+      x: "xhi",
+      y: "xbye",
+    }
+  );
 });
