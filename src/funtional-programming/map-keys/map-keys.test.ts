@@ -130,4 +130,19 @@ Deno.test("normal mapper", () => {
       "Japanese Yen": 1563,
     }
   );
+
+  const prefixWith = (prefix: string) => (key: string) => `${prefix}${key}`;
+  mapKeysTest(
+    [
+      {
+        x: 22,
+        y: 8,
+      },
+      prefixWith("x"),
+    ],
+    {
+      xx: 22,
+      xy: 8,
+    }
+  );
 });
