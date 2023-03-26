@@ -39,7 +39,7 @@ Deno.test("stable sort", () => {
         { id: 5, date: "June 12, 2012" },
       ],
       getter: (it) => new Date(it.date),
-      desc: false,
+      order: "asc",
     }),
     [
       { id: 1, date: "February 1, 2022" },
@@ -80,7 +80,7 @@ Deno.test("stable sort", () => {
         { id: 5, str: "b" },
       ],
       getter: (it) => it.str,
-      desc: false,
+      order: "asc",
     }),
     [
       { id: 1, str: "c" },
@@ -106,7 +106,6 @@ Deno.test("special values", () => {
         Number.NaN,
       ],
       getter: (it) => it,
-      desc: true,
     }),
     [
       Number.NEGATIVE_INFINITY,
