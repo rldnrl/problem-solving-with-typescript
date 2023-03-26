@@ -1,7 +1,7 @@
 type SortProps<T> = {
   array: readonly T[];
   getter: (item: T) => string | number | Date;
-  desc?: boolean;
+  order?: "desc" | "asc";
 };
 
 const getDesc = (a: string | number | Date, b: string | number | Date) =>
@@ -10,7 +10,7 @@ const getDesc = (a: string | number | Date, b: string | number | Date) =>
 const getAsc = (a: string | number | Date, b: string | number | Date) =>
   a > b ? -1 : a < b ? 1 : 0;
 
-export const sort = <T>({ array, getter, desc = true }: SortProps<T>) => {
+export const sort = <T>({ array, getter, order = "desc" }: SortProps<T>) => {
   if (!array) return [];
 
   const len = array.length;
@@ -30,7 +30,7 @@ export const sort = <T>({ array, getter, desc = true }: SortProps<T>) => {
     if (a === null) return 1;
     if (b === null) return -1;
 
-    if (desc) {
+    if (order === "desc") {
       return getDesc(a, b);
     } else {
       return getAsc(a, b);
