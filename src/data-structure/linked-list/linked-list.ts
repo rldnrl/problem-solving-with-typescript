@@ -9,9 +9,9 @@ export class ListNode<T> {
 }
 
 export class LinkedList<T> {
-  private head: ListNode<T> | null = null;
-  private tail: ListNode<T> | null = null;
-  private size = 0;
+  public head: ListNode<T> | null = null;
+  public tail: ListNode<T> | null = null;
+  public size = 0;
 
   get(index: number) {
     if (index < 0 || index > this.size) {
