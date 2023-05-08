@@ -41,6 +41,36 @@ export class LinkedList<T> {
     this.size++;
   }
 
+  insertAt(index: number, data: T) {
+    if (index < 0 || index > this.size) {
+      throw new Error("Invalid index");
+    }
+
+    const newNode = new ListNode(data);
+    if (index === 0) {
+      newNode.next = this.head;
+      this.head = newNode;
+      if (!this.tail) {
+        this.tail = newNode;
+      }
+    } else if (index === this.size) {
+      this.tail!.next = newNode;
+      this.tail = newNode;
+    } else {
+      let current = this.head;
+      let prev = null;
+      let i = 0;
+      while (i < index) {
+        prev = current;
+        current = current!.next;
+        i++;
+      }
+      newNode.next = current;
+      prev!.next = newNode;
+    }
+    this.size++;
+  }
+
   remove(data: T) {
     let current = this.head;
     let prev = null;
